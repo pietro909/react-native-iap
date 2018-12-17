@@ -1,0 +1,34 @@
+// @flow
+
+declare type Product = {|
+  currency: string,
+  description: string,
+  introductoryPrice: string,
+  introductoryPriceNumberOfPeriodsIOS: string,
+  introductoryPricePaymentModeIOS: string,
+  introductoryPriceSubscriptionPeriodIOS: string,
+  localizedPrice: string,
+  price: string,
+  productId: string,
+  subscriptionPeriodNumberIOS: string,
+  subscriptionPeriodUnitIOS: string,
+  title: string,
+  type: string,
+|}
+
+declare type ProductPurchase = {|
+  dataAndroid?: string;
+  productId: string;
+  purchaseToken?: string;
+  signatureAndroid?: string;
+  transactionDate: string;
+  transactionId: string;
+  transactionReceipt: string;
+|}
+
+declare export function getProducts(string[]): Promise<Product[]>;
+
+declare export function buyProduct(string): Promise<ProductPurchase>;
+
+declare export function endConnection(): Promise<void>;
+
